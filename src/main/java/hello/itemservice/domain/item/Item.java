@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class Item {
 
+    @NotNull  // 수정 요구 사항
     private Long id;
 
     @NotBlank
