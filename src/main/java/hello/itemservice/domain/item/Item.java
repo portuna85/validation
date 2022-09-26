@@ -10,18 +10,18 @@ import javax.validation.constraints.NotNull;
 @Data
 public class Item {
 
-    @NotNull  // 수정 요구 사항
+    @NotNull(groups = UpdateCheck.class)  // 수정 요구 사항
     private Long id;
 
-    @NotBlank
+    @NotBlank(groups = {SaveCheck.class, UpdateCheck.class})
     private String itemName;
 
-    @NotNull
-    @Range(min = 100, max= 1000000)
+    @NotNull(groups = {SaveCheck.class, UpdateCheck.class})
+    @Range(min = 100, max= 1000000, groups = {SaveCheck.class, UpdateCheck.class})
     private Integer price;
 
-    @NotNull
-    @Max(9999)
+    @NotNull(groups = {SaveCheck.class, UpdateCheck.class})
+    @Max(value = 9999, groups = {SaveCheck.class})
     private Integer quantity;
 
     public Item() {
