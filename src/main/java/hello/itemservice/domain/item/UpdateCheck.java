@@ -1,4 +1,4 @@
 package hello.itemservice.domain.item;
 
-public class UpdateCheck {
+public interface UpdateCheck {
 }
